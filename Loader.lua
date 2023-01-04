@@ -206,8 +206,9 @@ Check.MouseButton1Click:Connect(function()
 	local is_key_present = isfile("Drible.txt")
 	if is_key_present == true then
 		if KeyBox.Text == game:HttpGet("https://1.kelprepl.repl.co/verify/Drible?verify_key=" .. KeyBox.Text) then
+			delfile("Drible.txt")
 			appendfile("Drible.txt", KeyBox.Text)
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/HoyoGey/DribleHub/main/GameChecker.lua"))()
+			loadstring(game:HttpGet "https://raw.githubusercontent.com/HoyoGey/DribleHub/main/GameChecker.lua")()
 			Noti:Notif({ Name = "Sucefful", Content = "Key Valid", Time = 5,
 				Icon = "https://www.roblox.com/headshot-thumbnail/image?userId=" ..
 					game.Players.LocalPlayer.UserId .. "&width=420&height=420&format=png" })
@@ -215,7 +216,6 @@ Check.MouseButton1Click:Connect(function()
 			wait(0.51)
 			KeyUI:Destroy()
 		else
-			appendfile("Drible.txt", KeyBox.Text)
 			Noti:Notif({ Name = "Warning", Content = "Key Wrong", Time = 5,
 				Icon = "https://www.roblox.com/headshot-thumbnail/image?userId=" ..
 					game.Players.LocalPlayer.UserId .. "&width=420&height=420&format=png" })
@@ -224,7 +224,7 @@ Check.MouseButton1Click:Connect(function()
 	else
 		if KeyBox.Text == game:HttpGet("https://1.kelprepl.repl.co/verify/Drible?verify_key=" .. KeyBox.Text) then
 			writefile("Drible.txt", KeyBox.Text)
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/HoyoGey/DribleHub/main/GameChecker.lua"))()
+			loadstring(game:HttpGet "https://raw.githubusercontent.com/HoyoGey/DribleHub/main/GameChecker.lua")()
 			Noti:Notif({ Name = "Sucefful", Content = "Key Valid", Time = 5,
 				Icon = "https://www.roblox.com/headshot-thumbnail/image?userId=" ..
 					game.Players.LocalPlayer.UserId .. "&width=420&height=420&format=png" })
@@ -320,7 +320,7 @@ if is_key_present == true then
 		Noti:Notif({ Name = "Sucefful", Content = "Key Valid Lets Start", Time = 5,
 			Icon = "https://www.roblox.com/headshot-thumbnail/image?userId=" ..
 				game.Players.LocalPlayer.UserId .. "&width=420&height=420&format=png" })
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/HoyoGey/DribleHub/main/GameChecker.lua"))()
+		loadstring(game:HttpGet "https://raw.githubusercontent.com/HoyoGey/DribleHub/main/GameChecker.lua")()
 		Main:TweenPosition(UDim2.new(0.25, 0, -1.5, 0), "In", "Quint", 0.5, true)
 		wait(0.51)
 		KeyUI:Destroy()
