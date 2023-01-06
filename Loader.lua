@@ -207,7 +207,7 @@ Check.MouseButton1Click:Connect(function()
 	if is_key_present == true then
 		if KeyBox.Text == game:HttpGet("https://1.kelprepl.repl.co/verify/Drible?verify_key=" .. KeyBox.Text) then
 			delfile("Drible.txt")
-			appendfile("Drible.txt", KeyBox.Text)
+			writefile("Drible.txt", KeyBox.Text)
 			loadstring(game:HttpGet "https://raw.githubusercontent.com/HoyoGey/DribleHub/main/GameChecker.lua")()
 			Noti:Notif({ Name = "Sucefful", Content = "Key Valid", Time = 5,
 				Icon = "https://www.roblox.com/headshot-thumbnail/image?userId=" ..
