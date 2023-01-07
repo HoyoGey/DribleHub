@@ -618,6 +618,12 @@ function lib:Window(text, preset, closebind)
             Section.SectionTitle.Text = text
             Section.SectionTitle.TextColor3 = Color3.fromRGB(170, 170, 170)
 
+            spawn(function()
+                while wait() do
+                    Section.Size = UDim2.new(0.9,0,0,Section.UIListLayout.AbsoluteContentSize.Y)
+                end
+            end)
+
             local tabcontent = {}
             function tabcontent:Button(text, callback)
                 local Button = Instance.new("TextButton")
